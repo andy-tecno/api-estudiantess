@@ -1,0 +1,49 @@
+### 1. Agregar estudiante (POST)
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+  "nombre": "Andy Sis",
+  "correo": "andy.sis@example.com",
+  "numero_telefono": "1234567890",
+  "idioma": "español"
+}
+
+### 2. Ver todos los estudiantes (GET)
+GET http://localhost:8080/students
+
+### 3. Ver estudiante por ID (GET)
+GET http://localhost:8080/students/1
+
+### 4. Editar estudiante completo (PUT)
+PUT http://localhost:8080/students/1
+Content-Type: application/json
+
+{
+  "nombre": "Juan Carlos Pérez",
+  "correo": "juan.perez@example.com",
+  "numero_telefono": "0987654321",
+  "idioma": "inglés"
+}
+
+### 5. Editar estudiante parcialmente (PATCH)
+PATCH http://localhost:8080/students/1
+Content-Type: application/json
+
+{
+  "idioma": "francés"
+}
+
+### 6. Prueba de validación (Debe dar error 400 por teléfono corto e idioma inválido)
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+  "nombre": "Ana López",
+  "correo": "ana@example.com",
+  "numero_telefono": "123",
+  "idioma": "alemán"
+}
+
+### 7. Eliminar estudiante (DELETE)
+DELETE http://localhost:8080/students/1
